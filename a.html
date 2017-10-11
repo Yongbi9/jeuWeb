@@ -1,0 +1,28 @@
+<html>
+
+<body>
+<div>
+<span id="spanEnfant">foo bar</span>
+</div>
+
+<script>
+var sp1 = document.createElement("span");
+
+// On lui donne un id de valeur 'nouveauSpan'
+sp1.setAttribute("id", "nouveauSpan");
+
+// On crée du contenu pour le nouvel élément
+var sp1_content = document.createTextNode("nouvel élément span de remplacement.");
+
+// On applique ce contenu au nouvel élément
+sp1.appendChild(sp1_content);
+
+// On construit une référence vers le noeud à remplacer
+var sp2 = document.getElementById("spanEnfant");
+var parentDiv = sp2.parentNode;
+
+// On remplace le nœud sp2 existant par le nouvel élément span contenu dans sp1.
+parentDiv.replaceChild(sp1, sp2);
+</script>
+</body>
+</html>
